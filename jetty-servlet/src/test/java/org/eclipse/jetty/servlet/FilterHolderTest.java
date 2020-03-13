@@ -21,8 +21,6 @@ package org.eclipse.jetty.servlet;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.eclipse.jetty.server.Server;
-
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.FilterConfig;
@@ -30,6 +28,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 
+import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.util.log.StacklessLogging;
 import org.junit.jupiter.api.Test;
 
