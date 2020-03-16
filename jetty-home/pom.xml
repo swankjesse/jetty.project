@@ -401,7 +401,7 @@
             </goals>
             <configuration>
               <excludeGroupIds>org.glassfish.web</excludeGroupIds>
-              <includeArtifactIds>taglibs-standard-spec,taglibs-standard-impl</includeArtifactIds>
+              <includeArtifactIds>taglibs-standard</includeArtifactIds>
               <prependGroupId>true</prependGroupId>
               <includeTypes>jar</includeTypes>
               <outputDirectory>${assembly-directory}/lib/apache-jstl</outputDirectory>
@@ -415,7 +415,7 @@
             </goals>
             <configuration>
               <excludeGroupIds>org.glassfish.web</excludeGroupIds>
-              <includeArtifactIds>taglibs-standard-spec,taglibs-standard-impl</includeArtifactIds>
+              <includeArtifactIds>taglibs-standard</includeArtifactIds>
               <prependGroupId>true</prependGroupId>
               <includeTypes>jar</includeTypes>
               <classifier>sources</classifier>
