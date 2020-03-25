@@ -211,6 +211,13 @@ public class SettingsBodyParser extends BodyParser
             return connectionFailure(buffer, ErrorCode.PROTOCOL_ERROR.code, "invalid_settings_max_frame_size");
 
         SettingsFrame frame = new SettingsFrame(settings, hasFlag(Flags.ACK));
+
+        // Make it easier for the client to lose the data race.
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+
         return onSettings(frame);
     }
 

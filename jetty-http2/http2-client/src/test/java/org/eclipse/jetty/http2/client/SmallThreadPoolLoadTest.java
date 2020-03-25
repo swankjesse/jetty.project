@@ -73,6 +73,7 @@ public class SmallThreadPoolLoadTest extends AbstractTest
 
         AbstractHTTP2ServerConnectionFactory h2 = connector.getBean(AbstractHTTP2ServerConnectionFactory.class);
         h2.setInitialSessionRecvWindow(Integer.MAX_VALUE);
+        h2.setMaxConcurrentStreams(2);
     }
 
     @Test
@@ -83,9 +84,9 @@ public class SmallThreadPoolLoadTest extends AbstractTest
         // Only one connection to the server.
         Session session = newClient(new Session.Listener.Adapter());
 
-        int runs = 10;
-        int iterations = 512;
-        boolean result = IntStream.range(0, 16).parallel()
+        int runs = 1;
+        int iterations = 1;
+        boolean result = IntStream.range(0, 4).parallel()
             .mapToObj(i -> IntStream.range(0, runs)
                 .mapToObj(j -> run(session, iterations))
                 .reduce(true, (acc, res) -> acc && res))
